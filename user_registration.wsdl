@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions
+    xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+    xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:tns="http://127.0.0.1:80/registration/user_registration"
+    xmlns="http://schemas.xmlsoap.org/wsdl/"
+    name="UserRegistration">
+
+    <types>
+        <xsd:schema targetNamespace="http://127.0.0.1:80/registration/user_registration">
+            <!-- Define any data types here if needed -->
+        </xsd:schema>
+    </types>
+
+    <message name="registerUserRequest">
+        <part name="username" type="xsd:string"/>
+        <part name="password" type="xsd:string"/>
+        <part name="email" type="xsd:string"/>
+    </message>
+
+    <message name="registerUserResponse">
+        <part name="response" type="xsd:string"/>
+    </message>
+
+    <message name="loginUserRequest">
+        <part name="username" type="xsd:string"/>
+        <part name="email" type="xsd:string"/>
+    </message>
+
+    <message name="loginUserResponse">
+        <part name="response" type="xsd:string"/>
+        <part name="sessionid" type="xsd:int"/>
+    </message>
+
+    <portType name="UserRegistrationPortType">
+        <operation name="registerUser">
+            <input message="tns:registerUserRequest"/>
+            <output message="tns:registerUserResponse"/>
+        </operation>
+    </portType>
+
+    <portType name="UserLoginPortType">
+        <operation name="loginUser">
+            <input message="tns:loginUserRequest"/>
+            <output message="tns:loginUserResponse"/>
+        </operation>
+    </portType>
+
+    <binding name="UserRegistrationBinding" type="tns:UserRegistrationPortType">
+        <soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <operation name="registerUser">
+            <soap:operation soapAction="urn:#registerUser"/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+        </operation>
+    </binding>
+
+    <binding name="UserLoginBinding" type="tns:UserLoginPortType">
+        <soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <operation name="loginUser">
+            <soap:operation soapAction="urn:#loginUser"/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+        </operation>
+    </binding>
+    
+
+    <service name="UserRegistrationService">
+        <port name="UserRegistrationPort" binding="tns:UserRegistrationBinding">
+            <soap:address location="http://127.0.0.1:80/registration/soap_server.php"/>
+        </port>
+    </service>
+
+    <service name="UserLoginService">
+        <port name="UserLoginPort" binding="tns:UserLoginBinding">
+            <soap:address location="http://127.0.0.1:80/registration/soap_server.php"/>
+        </port>
+    </service>
+</definitions>
