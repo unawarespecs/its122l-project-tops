@@ -63,10 +63,6 @@ if (isset($_SESSION['userID']) && is_numeric($_SESSION['userID'])) {
 
             <script src="../js/scripts.js"></script>
         </div>
-        <div class="image-section">
-            <img src="https://www.pngplay.com/wp-content/uploads/5/Graphic-Web-Design-Vector-PNG.png"
-                alt="Learning illustration">
-        </div>
     </div>
 
 </body>

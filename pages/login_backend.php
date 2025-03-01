@@ -8,14 +8,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     // Create XML data
     $xml = new SimpleXMLElement('<user></user>');
-    $xml->addChild('password_login', $password);
-    $xml->addChild('email_login', $email);
+    $xml->addChild('password', $password);
+    $xml->addChild('email', $email);
 
     // Create SOAP client and send the request
     try {
         $client = new SoapClient("../user_registration.wsdl");
         $response = $client->loginUser($xml->asXML());
         $response_message = $response['response']; // Capture the response
+        echo $response;
+        echo $response_message;
 
         if ($response_message == "Login successful!") {
             $_SESSION['userID'] = $response['sessionid'];

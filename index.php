@@ -74,7 +74,7 @@
         </main>
 
         <footer class="mt-auto text-white-50">
-            <p>Copyright &copy; 2025, <a class="text-white" href="https://example.com">Mapua Webdevs</a> and
+            <p>Copyright &copy; 2025, <a class="text-white" href="https://www.mapua.edu.ph">Mapua Webdevs</a> and
                 <a class="text-white" href="https://web.facebook.com/OfficialTOPs">Tahanan Outreach Projects & Services,
                     Inc</a>. We do
                 not own the TOPS brand.

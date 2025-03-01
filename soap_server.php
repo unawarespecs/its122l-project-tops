@@ -11,7 +11,7 @@ class UserRegistration
 {
     // Database connection parameters
     private $host = 'localhost';
-    private $dbname = 'user_reg';
+    private $dbname = 'user_registration';
     private $username = 'root'; // Replace with your database username
     private $password = ''; // Replace with your database password
 // Connect to the database
@@ -52,11 +52,14 @@ VALUES (:username, :password, :email)");
             $stmt->bindParam(':password', $hashedPassword);
             $stmt->bindParam(':email', $email);
             if ($stmt->execute()) {
+                echo "Registration successful!";
                 return "Registration successful!";
             } else {
+                echo "Error: Could not register user.";
                 return "Error: Could not register user.";
             }
         }
+        echo "Database connection error.";
         return "Database connection error.";
     }
 
@@ -82,19 +85,19 @@ VALUES (:username, :password, :email)");
                 $stmt->bindParam(':email', $email);
                 $stmt->execute();
                 $result = $stmt->fetch(PDO::FETCH_ASSOC);
+                echo "login success";
                 return [
                     'response' => "Login successful!",
                     'sessionid' => $result['id']
                 ];
             } else {
+                echo "login success";
                 return [
                     'response' => "Login successful!",
                 ];
             }
         }
+        echo "Database connection error.";
         return "Database connection error.";
     }
 }
-
-
-?>

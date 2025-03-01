@@ -17,9 +17,9 @@
     <div class="container" id="container">
         <div class="form-container sign-up">
             <form method="POST" action="register_backend.php">
-                <input type="text" id="username_register" name="username" placeholder="Enter your username" required>
-                <input type="password" id="password_register" name="password" placeholder="Enter your password" required>
-                <input type="email" id="email_register" name="email" placeholder="Enter your email" required>
+                <input type="text" id="username" name="username" placeholder="Enter your username" required>
+                <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
 
                 <input type="submit" value="Sign Up">
             </form>
@@ -27,8 +27,8 @@
         <div class="form-container sign-in">
             <form method="POST" action="login_backend.php">
                 <h1>Sign In</h1>
-                <input type="email" id="email_login" name="email" placeholder="Enter your email" required>
-                <input type="password" id="password_login" name="password" placeholder="Enter your password" required>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                <input type="password" id="password" name="password" placeholder="Enter your password" required>
 
                 <input type="submit" value="Login">
 
@@ -54,7 +54,7 @@
             </div>
         </div>
     </div>
-    <script src="login_script.js"></script>
+    <script src="../login_script.js"></script>
 </body>
 
 </html>
