@@ -1,5 +1,5 @@
 <?php
-session_start();
+
 $response_message = ''; // Initialize response message
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -20,6 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         echo $response_message;
 
         if ($response_message == "Login successful!") {
+            session_start();
             $_SESSION['userID'] = $response['sessionid'];
             header("Location: admin_dashboard.php");
             exit;

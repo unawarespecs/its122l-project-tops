@@ -9,9 +9,9 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.88.1">
-    <title>Tahanan Outreach Projects & Services, Inc</title>
+    <title>Tahanan Outreach Projects & Services, Inc.</title>
 
-    <!-- <link rel="icon" type="image/x-icon" href=""> -->
+    <link rel="icon" type="image/x-icon" href="assets/images/topslogo.png">
     <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/cover/">
 
     <!-- Bootstrap core CSS -->
@@ -50,34 +50,31 @@
         <header class="mb-auto">
             <div>
                 <img src="assets/images/topslogo.png" class="TOPSlogo" alt="TOPS logo">
-                <h3 class="float-md-start mb-0">Tahanan Outreach Projects & Services, Inc</h3>
+                <h3 class="float-md-start mb-0">Tahanan Outreach Projects & Services, Inc.</h3>
                 <nav class="nav nav-masthead justify-content-center float-md-end">
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    <a class="nav-link" href="pages/home.php">Home</a>
                     <a class="nav-link" href="pages/aboutus.php">About Us</a>
                     <a class="nav-link" href="pages/announcements.php">Announcements</a>
-                    <a class="nav-link" href="pages/schedule.php">Outreach Schedule</a>
                     <a class="nav-link" href="pages/donate.php">Donate</a>
-                    <a class="nav-link" href="pages/contact.php">Contact Us</a>
-                    <a class="nav-link" href="pages/login.php">Login/Register</a>
+                    <a class="nav-link" href="pages/schedule.php">Outreach Schedule</a>
                 </nav>
             </div>
         </header>
 
         <main class="px-3">
-            <h1><span style="color: #00704A">[Placeholder]</span></h1>
-            <p class="lead"><?php echo "Hi, I'm a PHP script!" ?></p>
+            <h1>We are <span style="color: #00704A">TOPS</span>.</h1>
+            <p class="lead">We help marginalized children to be educated.</p>
 
             <p class="lead">
-                <a href="pages/aboutus.php" class="btn btn-lg btn-secondary fw-bold border-white bg-white">Learn
+                <a href="pages/home.php" class="btn btn-lg btn-secondary fw-bold border-white bg-white">Learn
                     more</a>
             </p>
         </main>
 
         <footer class="mt-auto text-white-50">
-            <p>Copyright &copy; 2025, <a class="text-white" href="https://www.mapua.edu.ph">Mapua Webdevs</a> and
+            <p>Copyright &copy; 2025, <a class="text-white" href="https://www.mapua.edu.ph">ITS122L Group 4 - BM3</a> and
                 <a class="text-white" href="https://web.facebook.com/OfficialTOPs">Tahanan Outreach Projects & Services,
-                    Inc</a>. We do
-                not own the TOPS brand.
+                    Inc</a>. This group does not own the TOPS brand.
             </p>
         </footer>
     </div>
