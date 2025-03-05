@@ -9,8 +9,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login & Register Page</title>
-    <link rel="stylesheet" href="../css/login.css">
-    <script defer src="../js/login_script.js"></script>
+    <link rel="stylesheet" href="../../css/login.css">
+    <link rel="icon" type="image/x-icon" href="../../assets/images/topslogo.png">
+    <script defer src="../../js/login_script.js"></script>
 </head>
 
 <body>
@@ -54,7 +55,6 @@
             </div>
         </div>
     </div>
-    <script src="../login_script.js"></script>
 </body>
 
 </html>

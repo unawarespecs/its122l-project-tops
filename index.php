@@ -40,7 +40,7 @@
     </style>
 
     <!-- Custom styles for this template -->
-    <link href="css/homepage-cover.css" rel="stylesheet">
+    <link href="css/homepage_cover.css" rel="stylesheet">
     <link href="css/homepage.css" rel="stylesheet">
 </head>
 

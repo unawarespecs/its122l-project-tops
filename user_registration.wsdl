@@ -33,6 +33,26 @@
         <part name="sessionid" type="xsd:int"/>
     </message>
 
+    <message name="registerAdminRequest">
+        <part name="username" type="xsd:string"/>
+        <part name="password" type="xsd:string"/>
+        <part name="email" type="xsd:string"/>
+    </message>
+
+    <message name="registerAdminResponse">
+        <part name="response" type="xsd:string"/>
+    </message>
+
+    <message name="loginAdminRequest">
+        <part name="username" type="xsd:string"/>
+        <part name="email" type="xsd:string"/>
+    </message>
+
+    <message name="loginAdminResponse">
+        <part name="response" type="xsd:string"/>
+        <part name="sessionid" type="xsd:int"/>
+    </message>
+
     <portType name="UserRegistrationPortType">
         <operation name="registerUser">
             <input message="tns:registerUserRequest"/>
@@ -40,10 +60,24 @@
         </operation>
     </portType>
 
+        <portType name="AdminRegistrationPortType">
+        <operation name="registerAdmin">
+            <input message="tns:registerAdminRequest"/>
+            <output message="tns:registerAdminResponse"/>
+        </operation>
+    </portType>
+
     <portType name="UserLoginPortType">
         <operation name="loginUser">
             <input message="tns:loginUserRequest"/>
             <output message="tns:loginUserResponse"/>
+        </operation>
+    </portType>
+
+    <portType name="AdminLoginPortType">
+        <operation name="loginAdmin">
+            <input message="tns:loginAdminRequest"/>
+            <output message="tns:loginAdminResponse"/>
         </operation>
     </portType>
 
@@ -72,6 +106,32 @@
             </output>
         </operation>
     </binding>
+
+        <binding name="AdminRegistrationBinding" type="tns:AdminRegistrationPortType">
+        <soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <operation name="registerAdmin">
+            <soap:operation soapAction="urn:#registerAdmin"/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+        </operation>
+    </binding>
+
+    <binding name="AdminLoginBinding" type="tns:AdminLoginPortType">
+        <soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <operation name="loginAdmin">
+            <soap:operation soapAction="urn:#loginAdmin"/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+        </operation>
+    </binding>
     
 
     <service name="UserRegistrationService">
@@ -83,6 +143,18 @@
     <service name="UserLoginService">
         <port name="UserLoginPort" binding="tns:UserLoginBinding">
             <soap:address location="http://127.0.0.1:80/proj/soap_server.php"/>
+        </port>
+    </service>
+
+    <service name="AdminRegistrationService">
+        <port name="AdminRegistrationPort" binding="tns:AdminRegistrationBinding">
+            <soap:address location="http://127.0.0.1:80/proj/soap_server_admin.php"/>
+        </port>
+    </service>
+
+    <service name="AdminLoginService">
+        <port name="AdminLoginPort" binding="tns:AdminLoginBinding">
+            <soap:address location="http://127.0.0.1:80/proj/soap_server_admin.php"/>
         </port>
     </service>
 </definitions>

@@ -122,7 +122,7 @@
                                 <li class="nav-item mb-2"><a href="../pages/schedule.php"
                                         class="nav-link p-0 text-muted">Schedule</a>
                                 </li>
-                                <li class="nav-item"><a href="../pages/login.php" class="nav-link p-0 text-muted">Admin
+                                <li class="nav-item"><a href="../pages/user_login/login.php" class="nav-link p-0 text-muted">Admin
                                         Login</a>
                                 </li>
                             </ul>

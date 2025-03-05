@@ -14,8 +14,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     // Create SOAP client and send the request
     try {
-        $client = new SoapClient("../user_registration.wsdl");
-        $response = $client->registerUser($xml->asXML()); // Capture the SOAP response
+        $client = new SoapClient("../../user_registration.wsdl");
+        $response = $client->registerAdmin($xml->asXML()); // Capture the SOAP response
         echo $response;
         if ($response == "Registration successful!") {
             header("Location: login.php");
