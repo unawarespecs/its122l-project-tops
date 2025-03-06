@@ -16,17 +16,20 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $client = new SoapClient("../../user_registration.wsdl");
         $response = $client->loginAdmin($xml->asXML());
         $response_message = $response['response']; // Capture the response
-        echo $response;
-        echo $response_message;
 
         if ($response_message == "Login successful!") {
             session_start();
             $_SESSION['adminUserID'] = $response['sessionid'];
             header("Location: ../admin/dashboard.php");
-            exit;
+        } else {
+            // Redirect back with an error message
+            header("Location: ../admin_login/login.php?error=" . urlencode($response_message));
         }
+        exit;
+
     } catch (Exception $e) {
         $response_message = "Error: " . $e->getMessage(); // Capture any errors
-        echo $response_message;
+        header("Location: ../admin_login/login.php?error=" . urlencode($response_message));
+        exit;
     }
 }

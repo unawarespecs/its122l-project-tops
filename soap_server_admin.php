@@ -74,30 +74,51 @@ VALUES (:username, :password, :email)");
         // Connect to the database
         $conn = $this->connect();
         if ($conn) {
-            // Prepare and execute SQL query
-            $stmt = $conn->prepare("SELECT password FROM users WHERE email = :email");
+            // Prepare and execute SQL query to fetch user info
+            $stmt = $conn->prepare("SELECT id, password FROM users WHERE email = :email");
             $stmt->bindParam(':email', $email);
             $stmt->execute();
             $result = $stmt->fetch(PDO::FETCH_ASSOC);
 
-            if ($result && password_verify($password, $result['password'])) {
-                $stmt = $conn->prepare("SELECT id FROM users WHERE email = :email");
-                $stmt->bindParam(':email', $email);
-                $stmt->execute();
-                $result = $stmt->fetch(PDO::FETCH_ASSOC);
-                echo "login success";
-                return [
-                    'response' => "Login successful!",
-                    'sessionid' => $result['id']
-                ];
+            if ($result) {
+                // Verify the password
+                if (password_verify($password, $result['password'])) {
+                    echo "login success";
+                    return [
+                        'response' => "Login successful!",
+                        'sessionid' => $result['id']
+                    ];
+                } else {
+                    // Log failed login attempt
+                    $this->logFailedAttempt($email);
+
+                    // Return failed login response
+                    echo "Login failed: Incorrect password.";
+                    return [
+                        'response' => "Login failed: Incorrect password."
+                    ];
+                }
             } else {
-                echo "login success";
+                echo "Login failed: User not found.";
                 return [
-                    'response' => "Login successful!",
+                    'response' => "Login failed: User not found."
                 ];
             }
         }
+
         echo "Database connection error.";
         return "Database connection error.";
     }
+    private function logFailedAttempt($email)
+    {
+        // Connect to the database
+        $conn = $this->connect();
+        if ($conn) {
+            // Insert a record of the failed login attempt
+            $stmt = $conn->prepare("INSERT INTO failed_logins (email, attempted_at) VALUES (:email, NOW())");
+            $stmt->bindParam(':email', $email);
+            $stmt->execute();
+        }
+    }
 }
+
