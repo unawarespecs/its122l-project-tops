@@ -313,7 +313,7 @@
                             </li>
                         </ul>
                     </div>
-                    
+                    <div class="col-2"></div>
                     <div class="col-2">
                         <h5>Contact Us</h5>
                         <ul class="nav flex-column">

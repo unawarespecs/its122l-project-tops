@@ -94,14 +94,16 @@
 
     <main>
         <br /><br />
-        <div class="container py-5">
-            <div class="row">
-                <div class="col-lg-6">
-                    <h1 class="display-5 fw-bold lh-1 mb-3">Outreach Schedule</h1>
-                    <p class="lead">Here are the upcoming outreach schedules for TOPS. Become a volunteer!</p>
+        <div class="py-5">
+            <div class="p-5 mb-4 bg-body-tertiary rounded-3"
+                 style="background: linear-gradient(to top, rgba(217,217,217,0.5), rgba(217,217,217,0.5)), url('../assets/images/bg-masthead.jpg') no-repeat center;">
+                <div class="container-fluid py-5">
+                    <h1 class="display-4">Outreach Schedule</h1>
+                    <p>Here are the upcoming outreach schedules for TOPS. Become a volunteer!</p>
                 </div>
             </div>
-
+        </div>
+        <div class="container py-5">
             <!-- FOOTER -->
             <div class="container">
                 <footer class="py-5">
@@ -126,6 +128,7 @@
                                 </li>
                             </ul>
                         </div>
+                        <div class="col-2"></div>
                         <div class="col-2">
                             <h5>Contact Us</h5>
                             <ul class="nav flex-column">
