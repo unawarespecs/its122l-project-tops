@@ -14,7 +14,7 @@
    <title>Logging out...</title>
 </head>
 <body class="register">
-<div align="center" class="login-container">
+<div style="align-items: center;" class="login-container">
 		<h1>Logged Out</h1>
         <h4>You have successfully logged out!</h4>
 </div>

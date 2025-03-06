@@ -1,6 +1,6 @@
 # ITS122L Project
 
-This project acts as a website for a non-governmental organization, Tahanan Outreach Projects & Services, Inc.
+This project acts as a website for a non-governmental organization, [Tahanan Outreach Projects & Services, Inc.](https://www.facebook.com/OfficialTOPs)
 
 ## Features
 
@@ -8,6 +8,10 @@ This project acts as a website for a non-governmental organization, Tahanan Outr
 - [ ] announcements (incoming and completed outreach/activities)
 - [ ] scheduling for those who wants to conduct outreach
 - [ ] donations (bank and gcash)
+- [ ] administrator dashboard
+  - [ ] adding content
+  - [ ] schedule management
+  - [ ] donation monitoring
 
 ## Dependencies
 
@@ -16,7 +20,7 @@ This project acts as a website for a non-governmental organization, Tahanan Outr
 
 ## Development Tools
 
-- [VS Code](https://code.visualstudio.com/)
-- [Notepad++](https://notepad-plus-plus.org)
+- [VS Code](https://code.visualstudio.com/)/[Notepad++](https://notepad-plus-plus.org)
+- [JetBrains PhpStorm](https://www.jetbrains.com/phpstorm/)
 - GitHub (as you are seeing here)
 - Facebook Messenger

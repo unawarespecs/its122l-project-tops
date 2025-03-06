@@ -130,7 +130,7 @@
                             <li class="nav-item mb-2"><a href="../pages/schedule.php"
                                                          class="nav-link p-0 text-muted">Schedule</a>
                             </li>
-                            <li class="nav-item"><a href="../pages/user_login/login.php"
+                            <li class="nav-item"><a href="../pages/admin_login/login.php"
                                                     class="nav-link p-0 text-muted">Admin
                                     Login</a>
                             </li>
@@ -158,7 +158,7 @@
                 </div>
 
                 <div class="d-flex justify-content-between py-4 my-4 border-top">
-                    <p>&copy; 2025, <a class="text-black" href="https://www.mapua.edu.ph">ITS122L Group 4 -
+                    <p>&copy; 2025, <a class="text-black" href="https://github.com/unawarespecs/its122l-project-tops/blob/main/group_members.md">ITS122L Group 4 -
                             BM3</a> and
                         <a class="text-black" href="https://web.facebook.com/OfficialTOPs">Tahanan Outreach
                             Projects &

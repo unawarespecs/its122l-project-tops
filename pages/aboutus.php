@@ -180,7 +180,7 @@
                 </div>
 
                 <div class="d-flex justify-content-between py-4 my-4 border-top">
-                    <p>&copy; 2025, <a class="text-black" href="https://www.mapua.edu.ph">ITS122L Group 4 - BM3</a>
+                    <p>&copy; 2025, <a class="text-black" href="https://github.com/unawarespecs/its122l-project-tops/blob/main/group_members.md">ITS122L Group 4 - BM3</a>
                         and
                         <a class="text-black" href="https://web.facebook.com/OfficialTOPs">Tahanan Outreach Projects
                             &

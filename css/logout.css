@@ -7,8 +7,7 @@ body, h1, p, input, label, a {
 }
 
 body {
-    background-color: #c9ffe1;
-    background: linear-gradient(to right, #ccffe3, #c9d6ff);
+    background: #c9ffe1 linear-gradient(to right, #ccffe3, #c9d6ff);
     color: #333333;
     font-size: 16px;
     display: flex;
@@ -55,16 +54,6 @@ body {
     height: 100%;
     background: #4caf50;
     animation: load 1s linear forwards;
-}
-
-logout-message {
-    background-color: #28a745;
-    color: white;
-    border-radius: 8px;
-    padding: 20px;
-    font-size: 18px;
-    width: 300px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .logout-message h2 {
