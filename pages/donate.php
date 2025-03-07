@@ -14,8 +14,6 @@
     <title>Donate to Us</title>
     <link rel="icon" type="image/x-icon" href="../assets/images/topslogo.png">
 
-    <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/carousel/">
-
     <!-- Bootstrap core CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
@@ -188,15 +186,31 @@
                         <ul class="nav flex-column">
                             <li class="nav-item mb-2">
                                 <text class="p-0 text-muted">Landline:
-                                    <text
-                                            class="text-black">+632 8353-2180
-                                    </text>
+                                    <text class="text-black">+632 8353-2180</text>
                                 </text>
                             </li>
                             <li class="nav-item mb-2">
-                                <text class="p-0 text-muted">Email: <a
-                                            href="mailto:topsinc.org@gmail.com"
-                                            class="text-black">topsinc.org@gmail.com</a></text>
+                                <text class="p-0 text-muted">Cellphone:
+                                    <text class="text-black">+639260121376</text>
+                                </text>
+                            </li>
+                            <li class="nav-item mb-2">
+                                <text class="p-0 text-muted">Email: <a href="mailto:topsinc.org@gmail.com"
+                                                                       class="text-black">topsinc.org@gmail.com</a>
+                                </text>
+                            </li>
+                            <li class="nav-item mb-2">
+                                <text class="p-0 text-muted">Email: <a href="mailto:tops.schoolhead.edu@gmail.com"
+                                                                       class="text-black">tops.schoolhead.edu@gmail.com</a>
+                                </text>
+                            </li>
+                            <li class="nav-item mb-2">
+                                <text class="p-0 text-muted">Address:
+                                    <text class="text-black">2589 Sta. Clara St. cor Leiva & Syquia Sts. Sta. Ana,
+                                        Manila,
+                                        1009
+                                    </text>
+                                </text>
                             </li>
                         </ul>
                     </div>
@@ -204,7 +218,9 @@
                 </div>
 
                 <div class="d-flex justify-content-between py-4 my-4 border-top">
-                    <p>&copy; 2025, <a class="text-black" href="https://github.com/unawarespecs/its122l-project-tops/blob/main/group_members.md">ITS122L Group 4 -
+                    <p>&copy; 2025, <a class="text-black"
+                                       href="https://github.com/unawarespecs/its122l-project-tops/blob/main/group_members.md">ITS122L
+                            Group 4 -
                             BM3</a> and
                         <a class="text-black" href="https://web.facebook.com/OfficialTOPs">Tahanan Outreach
                             Projects &

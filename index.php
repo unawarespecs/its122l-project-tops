@@ -26,7 +26,7 @@
 
     <style>
         .bd-placeholder-img {
-            background-image: url('assets/images/bg-masthead.jpg');
+            background-image: url('assets/images/topsoffice.jpg');
             background-repeat: no-repeat;
             background-size: cover;
             background-position: center;

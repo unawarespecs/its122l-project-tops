@@ -1,4 +1,4 @@
-?php
+<?php
 
 ?>
 
@@ -13,8 +13,6 @@
     <meta name="generator" content="Hugo 0.88.1">
     <title>Homepage</title>
     <link rel="icon" type="image/x-icon" href="../assets/images/topslogo.png">
-
-    <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/carousel/">
 
     <!-- Bootstrap core CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -228,9 +226,9 @@
                     venenatis quis ipsum in, efficitur tincidunt nisi.</p>
             </div>
             <div class="col-md-5">
-                <img src="../assets/images/bg-masthead.jpg" alt="Heritage"
+                <img src="../assets/images/topsoffice2.jpg" alt="Heritage"
                      class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto carousel-img-override"
-                     style="border-radius: 35px;" width="500px" height="500px" xmlns="http://www.w3.org/2000/svg"
+                     style="border-radius: 35px;" width="2048" height="1536" xmlns="http://www.w3.org/2000/svg"
                      role="img" aria-label="Heritage" preserveAspectRatio="xMidYMid slice" focusable="false">
                 <!-- first featurette pic -->
 
@@ -323,8 +321,25 @@
                             </text>
                         </li>
                         <li class="nav-item mb-2">
+                            <text class="p-0 text-muted">Cellphone:
+                                <text class="text-black">+639260121376</text>
+                            </text>
+                        </li>
+                        <li class="nav-item mb-2">
                             <text class="p-0 text-muted">Email: <a href="mailto:topsinc.org@gmail.com"
                                                                    class="text-black">topsinc.org@gmail.com</a></text>
+                        </li>
+                        <li class="nav-item mb-2">
+                            <text class="p-0 text-muted">Email: <a href="mailto:tops.schoolhead.edu@gmail.com"
+                                                                   class="text-black">tops.schoolhead.edu@gmail.com</a>
+                            </text>
+                        </li>
+                        <li class="nav-item mb-2">
+                            <text class="p-0 text-muted">Address:
+                                <text class="text-black">2589 Sta. Clara St. cor Leiva & Syquia Sts. Sta. Ana, Manila,
+                                    1009
+                                </text>
+                            </text>
                         </li>
                     </ul>
                 </div>
@@ -332,7 +347,9 @@
             </div>
 
             <div class="d-flex justify-content-between py-4 my-4 border-top">
-                <p>&copy; 2025, <a class="text-black" href="https://github.com/unawarespecs/its122l-project-tops/blob/main/group_members.md">ITS122L Group 4 - BM3</a> and
+                <p>&copy; 2025, <a class="text-black"
+                                   href="https://github.com/unawarespecs/its122l-project-tops/blob/main/group_members.md">ITS122L
+                        Group 4 - BM3</a> and
                     <a class="text-black" href="https://web.facebook.com/OfficialTOPs">Tahanan Outreach Projects &
                         Services, Inc</a>. This group does not own the TOPS brand.
                 </p>

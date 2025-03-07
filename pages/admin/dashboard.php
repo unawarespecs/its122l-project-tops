@@ -252,20 +252,22 @@ global $email;
         </div>
     </div>
 
-    <script>
-        document.getElementById('delete_multiple').addEventListener('click', function () {
-            alert('Not implemented');
-        });
-
-        document.getElementById('updateUser').addEventListener('click', function () {
-            alert('Not implemented');
-        });
-
-        document.getElementById('deleteUser').addEventListener('click', function () {
-            alert('Not implemented');
-        });
-    </script>
+<!--    <script>-->
+<!--        document.getElementById('delete_multiple').addEventListener('click', function () {-->
+<!--            alert('Not implemented');-->
+<!--        });-->
+<!---->
+<!--        document.getElementById('updateUser').addEventListener('click', function () {-->
+<!--            alert('Not implemented');-->
+<!--        });-->
+<!---->
+<!--        document.getElementById('deleteUser').addEventListener('click', function () {-->
+<!--            alert('Not implemented');-->
+<!--        });-->
+<!--    </script>-->
 <?php endif; ?>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="../../js/ajax.js"></script>
 <script src="../../js/scripts.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
         integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"

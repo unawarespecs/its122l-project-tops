@@ -14,8 +14,6 @@
     <title>About Tahanan Outreach Projects & Services, Inc.</title>
     <link rel="icon" type="image/x-icon" href="../assets/images/topslogo.png">
 
-    <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/carousel/">
-
     <!-- Bootstrap core CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
@@ -106,10 +104,26 @@
     <div class="container py-5">
         <div class="row">
             <div class="col-lg-6">
-                <h2>Mission and Vision</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto, rem voluptate soluta
-                    aspernatur libero odio. Alias omnis perferendis, rem eveniet sit neque repellat pariatur
-                    possimus vitae obcaecati hic, qui consectetur. </p>
+                <h2>Vision</h2>
+                <p>Build a future of well-molded society and educated youth, raise a community with strong volunteerism
+                    and a symbol of hope in attaining its mission.</p>
+                <h2>Mission</h2>
+                <p>We work to develop, strengthen and empower our community by providing essential resources to
+                    those in need.</p>
+                <h2>Our Goals</h2>
+                <ul>
+                    <li><p>To design a holistic development program of a child's social, emotional, cognitive,
+                            and physical need that builds a solid and [???] foundation for lifelong learning and
+                            well-being.</p></li>
+                    <li><p>To formulate a quality [???] based and age/capability based early childhood
+                            education programs.</p></li>
+                    <li><p>Establish and/or strengthen local and international partners that support and
+                            contribute [???] the safeguarding rights of children and other beneficiaries.</p></li>
+                    <li><p>To develop necessary skills of parents and other beneficiaries to help augment
+                            their family's income through access to an alternative source of [???]</p></li>
+                    <li><p>To collaborate with parents, school and the community in promoting health,
+                            well-being, and learning of the children.</p></li>
+                </ul>
                 <h2>Core Values</h2>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut, similique recusandae facilis
                     veritatis cum dolores, maiores impedit suscipit praesentium ipsam doloremque officia est ipsa
@@ -164,15 +178,31 @@
                         <ul class="nav flex-column">
                             <li class="nav-item mb-2">
                                 <text class="p-0 text-muted">Landline:
-                                    <text
-                                            class="text-black">+632 8353-2180
-                                    </text>
+                                    <text class="text-black">+632 8353-2180</text>
                                 </text>
                             </li>
                             <li class="nav-item mb-2">
-                                <text class="p-0 text-muted">Email: <a
-                                            href="mailto:topsinc.org@gmail.com"
-                                            class="text-black">topsinc.org@gmail.com</a></text>
+                                <text class="p-0 text-muted">Cellphone:
+                                    <text class="text-black">+639260121376</text>
+                                </text>
+                            </li>
+                            <li class="nav-item mb-2">
+                                <text class="p-0 text-muted">Email: <a href="mailto:topsinc.org@gmail.com"
+                                                                       class="text-black">topsinc.org@gmail.com</a>
+                                </text>
+                            </li>
+                            <li class="nav-item mb-2">
+                                <text class="p-0 text-muted">Email: <a href="mailto:tops.schoolhead.edu@gmail.com"
+                                                                       class="text-black">tops.schoolhead.edu@gmail.com</a>
+                                </text>
+                            </li>
+                            <li class="nav-item mb-2">
+                                <text class="p-0 text-muted">Address:
+                                    <text class="text-black">2589 Sta. Clara St. cor Leiva & Syquia Sts. Sta. Ana,
+                                        Manila,
+                                        1009
+                                    </text>
+                                </text>
                             </li>
                         </ul>
                     </div>
@@ -180,7 +210,9 @@
                 </div>
 
                 <div class="d-flex justify-content-between py-4 my-4 border-top">
-                    <p>&copy; 2025, <a class="text-black" href="https://github.com/unawarespecs/its122l-project-tops/blob/main/group_members.md">ITS122L Group 4 - BM3</a>
+                    <p>&copy; 2025, <a class="text-black"
+                                       href="https://github.com/unawarespecs/its122l-project-tops/blob/main/group_members.md">ITS122L
+                            Group 4 - BM3</a>
                         and
                         <a class="text-black" href="https://web.facebook.com/OfficialTOPs">Tahanan Outreach Projects
                             &
