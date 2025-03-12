@@ -116,7 +116,7 @@
         </div>
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="../assets/images/topsheader.png" class="img-fluid" alt="Placeholder 1">
+                <img src="../assets/images/topsheader.png" class="img-fluid d-block w-100" alt="Placeholder 1">
                 <!-- first image in carousel -->
 
                 <div class="container">
@@ -140,7 +140,7 @@
                 </div>
             </div>
             <div class="carousel-item">
-                <img src="../assets/images/bg-masthead.jpg" class="img-fluid" alt="Placeholder 3">
+                <img src="../assets/images/topsclassroom.jpg" class="img-fluid" alt="Placeholder 3">
                 <!-- third image in carousel -->
 
                 <div class="container">

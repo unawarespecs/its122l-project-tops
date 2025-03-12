@@ -32,6 +32,7 @@ body {
   position: absolute;
   top: 0;
   left: 0;
+  object-fit: cover;
   min-width: 100%;
   max-width: fit-content;
   height: 45rem;

@@ -94,7 +94,7 @@
     <br/><br/>
     <div class="py-5">
         <div class="p-5 mb-4 bg-body-tertiary rounded-3"
-             style="background: linear-gradient(to top, rgba(217,217,217,0.5), rgba(217,217,217,0.5)), url('../assets/images/bg-masthead.jpg') no-repeat center;">
+             style="background: linear-gradient(to top, rgba(217,217,217,0.5), rgba(217,217,217,0.5)), url('../assets/images/topsoffice2.jpg') no-repeat center;">
             <div class="container-fluid py-5">
                 <h1 class="display-4">Outreach Schedule</h1>
                 <p>Here are the upcoming outreach schedules for TOPS. Become a volunteer!</p>
