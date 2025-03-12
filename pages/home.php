@@ -116,7 +116,7 @@
         </div>
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="../assets/images/bg-masthead.jpg" class="img-fluid" alt="Placeholder 1">
+                <img src="../assets/images/topsheader.png" class="img-fluid" alt="Placeholder 1">
                 <!-- first image in carousel -->
 
                 <div class="container">
@@ -128,7 +128,7 @@
                 </div>
             </div>
             <div class="carousel-item">
-                <img src="../assets/images/bg-masthead.jpg" class="img-fluid" alt="Placeholder 2">
+                <img src="../assets/images/topsevent.png" class="img-fluid" alt="Placeholder 2">
                 <!-- second image in carousel -->
 
                 <div class="container">
@@ -168,46 +168,6 @@
     <!-- Wrap the rest of the page in another container to center all the content. -->
 
     <div class="container marketing">
-
-        <!-- Three columns of text below the carousel -->
-        <div class="row">
-            <div class="col-lg-4">
-                <img src="../assets/images/bg-masthead.jpg" alt="Placeholder"
-                     class="bd-placeholder-img rounded-circle" width="140" height="140"
-                     xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder"
-                     preserveAspectRatio="xMidYMid slice" focusable="false">
-                <!-- left image -->
-
-                <h2>[Placeholder]</h2>
-                <p>[Placeholder]</p>
-                <p><a class="btn btn-secondary" href="https://example.com" target="_blank">View details &raquo;</a>
-                </p>
-            </div><!-- /.col-lg-4 -->
-            <div class="col-lg-4">
-                <img src="../assets/images/bg-masthead.jpg" alt="Placeholder"
-                     class="bd-placeholder-img rounded-circle" width="140" height="140"
-                     xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder"
-                     preserveAspectRatio="xMidYMid slice" focusable="false"> <!-- middle image -->
-
-                <h2>[Placeholder]</h2>
-                <p>[Placeholder]</p>
-                <p><a class="btn btn-secondary" href="https://example.com" target="_blank">View details &raquo;</a>
-                </p>
-            </div><!-- /.col-lg-4 -->
-            <div class="col-lg-4">
-                <img src="../assets/images/bg-masthead.jpg" alt="Placeholder"
-                     class="bd-placeholder-img rounded-circle" width="140" height="140"
-                     xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder"
-                     preserveAspectRatio="xMidYMid slice" focusable="false">
-                <!-- right image -->
-
-                <h2>[Placeholder]</h2>
-                <p>[Placeholder]</p>
-                <p><a class="btn btn-secondary" href="https://example.com" target="_blank">View details &raquo;</a>
-                </p>
-            </div><!-- /.col-lg-4 -->
-        </div><!-- /.row -->
-
 
         <!-- START THE FEATURETTES -->
 
@@ -249,7 +209,7 @@
                     venenatis quis ipsum in, efficitur tincidunt nisi.</p>
             </div>
             <div class="col-md-5 order-md-1">
-                <img src="../assets/images/bg-masthead.jpg" alt="Partners"
+                <img src="../assets/images/tops_activity_classroom.png" alt="Partners"
                      class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto carousel-img-override"
                      style="border-radius: 35px;" width="500" height="500" xmlns="http://www.w3.org/2000/svg"
                      role="img" aria-label="Partners" preserveAspectRatio="xMidYMid slice" focusable="false">
@@ -272,7 +232,7 @@
                     venenatis quis ipsum in, efficitur tincidunt nisi.</p>
             </div>
             <div class="col-md-5">
-                <img src="../assets/images/bg-masthead.jpg" alt="WeBelieve"
+                <img src="../assets/images/tops_activity_livelihood.png" alt="WeBelieve"
                      class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto carousel-img-override"
                      width="500" height="500" style="border-radius: 35px;" xmlns="http://www.w3.org/2000/svg"
                      role="img" aria-label="WeBelieve" preserveAspectRatio="xMidYMid slice" focusable="false">

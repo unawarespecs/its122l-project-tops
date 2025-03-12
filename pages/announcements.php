@@ -63,13 +63,29 @@ $announcements = $stmt->fetchAll(PDO::FETCH_ASSOC);
         }
 
         .announcement-title {
-            color: #007bff;
+            color: #00704a;
             font-weight: bold;
         }
 
         .announcement-date {
             color: #6c757d;
             font-size: 0.9rem;
+        }
+
+        .viewmore-btn {
+            padding: 8px 15px;
+            background-color: #00704A;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 14px;
+            margin-left: 15px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .viewmore-btn:hover {
+            background-color: #003a27;
         }
 
     </style>
@@ -141,7 +157,7 @@ $announcements = $stmt->fetchAll(PDO::FETCH_ASSOC);
             </div>
         </div>
 
-        <div class="container py-5">
+        <div class="container">
             <?php if (count($announcements) > 0): ?>
                 <?php foreach ($announcements as $announcement): ?>
                     <div class="row">
@@ -158,7 +174,7 @@ $announcements = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                 <p class="card-text"><?= nl2br(htmlspecialchars(substr($announcement['content'], 0, 150))) .
                                     (strlen($announcement['content']) > 150 ? '...' : '') ?></p>
                                 <!-- Read More Button that triggers the modal -->
-                                <button class="btn btn-primary btn-sm" data-bs-toggle="modal"
+                                <button class="viewmore-btn" data-bs-toggle="modal"
                                         data-bs-target="#announcementModal<?= $announcement['id'] ?>">
                                     Read More
                                 </button>
