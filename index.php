@@ -57,7 +57,7 @@
 
     <main class="px-3">
         <h1>We are <span style="color: #00704A">TOPS</span>.</h1>
-        <p class="lead">We help marginalized children to be educated.</p>
+        <p class="lead">Education, Empowerment, and Equality for All.</p>
 
         <p class="lead">
             <a href="pages/home.php" class="btn btn-lg btn-secondary fw-bold border-white bg-white">Learn

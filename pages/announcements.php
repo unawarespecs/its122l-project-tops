@@ -1,5 +1,22 @@
 <?php
 
+// Connect to the database
+$host = 'localhost';    // Replace with your host
+$dbname = 'announcements'; // Database name
+$username = 'root';     // Your database username
+$password = '';         // Your database password
+try {
+    $pdo = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+} catch (PDOException $e) {
+    die("Database connection failed: " . $e->getMessage());
+}
+
+// Fetch announcements from the database
+$query = "SELECT * FROM announcements ORDER BY publication_date DESC";
+$stmt = $pdo->prepare($query);
+$stmt->execute();
+$announcements = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 <!doctype html>
@@ -23,6 +40,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
             integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
             crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
 
     <style>
         .TOPSlogo {
@@ -32,6 +50,28 @@
             width: 50px;
             height: 50px;
         }
+
+        .announcement-card {
+            border: 1px solid #dee2e6;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .announcement-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .announcement-title {
+            color: #007bff;
+            font-weight: bold;
+        }
+
+        .announcement-date {
+            color: #6c757d;
+            font-size: 0.9rem;
+        }
+
     </style>
 
 
@@ -100,97 +140,154 @@
                 <p>Announcements from the TOPS staff.</p>
             </div>
         </div>
+
+        <div class="container py-5">
+            <?php if (count($announcements) > 0): ?>
+                <?php foreach ($announcements as $announcement): ?>
+                    <div class="row">
+                        <div class="card announcement-card">
+                            <div class="card-body">
+                                <h5 class="card-title announcement-title"><?= htmlspecialchars($announcement['title']) ?></h5>
+                                <p class="announcement-date">
+                                    Published
+                                    on: <?= date('F j, Y, g:i A', strtotime($announcement['publication_date'])) ?>
+                                    <?php if (!empty($announcement['author'])): ?>
+                                        <br>By: <?= htmlspecialchars($announcement['author']) ?>
+                                    <?php endif; ?>
+                                </p>
+                                <p class="card-text"><?= nl2br(htmlspecialchars(substr($announcement['content'], 0, 150))) .
+                                    (strlen($announcement['content']) > 150 ? '...' : '') ?></p>
+                                <!-- Read More Button that triggers the modal -->
+                                <button class="btn btn-primary btn-sm" data-bs-toggle="modal"
+                                        data-bs-target="#announcementModal<?= $announcement['id'] ?>">
+                                    Read More
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Modal for the announcement -->
+                    <div class="modal fade" id="announcementModal<?= $announcement['id'] ?>" tabindex="-1"
+                         aria-labelledby="announcementModalLabel<?= $announcement['id'] ?>" aria-hidden="true">
+                        <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title announcement-title"
+                                        id="announcementModalLabel<?= $announcement['id'] ?>">
+                                        <?= htmlspecialchars($announcement['title']) ?>
+                                    </h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <p class="announcement-date">
+                                        Published
+                                        on: <?= date('F j, Y, g:i a', strtotime($announcement['publication_date'])) ?>
+                                        <?php if (!empty($announcement['author'])): ?>
+                                            <br>By: <?= htmlspecialchars($announcement['author']) ?>
+                                        <?php endif; ?>
+                                    </p>
+                                    <p><?= nl2br(htmlspecialchars($announcement['content'])) ?></p>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <?php endforeach; ?>
+            <?php else: ?>
+                <div class="col-12">
+                    <p class="text-center text-muted">No announcements found</p>
+                </div>
+            <?php endif; ?>
+        </div>
     </div>
 
-    <div class="container py-5">
-        <div class="row">
-            <div class="col-lg-6">
 
-            </div>
-        </div>
-
-        <!-- FOOTER -->
-        <div class="container">
-            <footer class="py-5">
-                <div class="row">
-                    <div class="col-2">
-                        <h5>Sitemap</h5>
-                        <ul class="nav flex-column">
-                            <li class="nav-item mb-2"><a href="../pages/home.php"
-                                                         class="nav-link p-0 text-muted">Home</a>
-                            </li>
-                            <li class="nav-item mb-2"><a href="../pages/aboutus.php"
-                                                         class="nav-link p-0 text-muted">About Us</a></li>
-                            <li class="nav-item mb-2"><a href="../pages/announcements.php"
-                                                         class="nav-link p-0 text-muted">Announcements</a></li>
-                            <li class="nav-item mb-2"><a href="../pages/donate.php"
-                                                         class="nav-link p-0 text-muted">Donate</a></li>
-                            <li class="nav-item mb-2"><a href="../pages/schedule.php"
-                                                         class="nav-link p-0 text-muted">Schedule</a>
-                            </li>
-                            <li class="nav-item"><a href="../pages/admin_login/login.php"
-                                                    class="nav-link p-0 text-muted">Admin
-                                    Login</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="col-2"></div>
-                    <div class="col-2">
-                        <h5>Contact Us</h5>
-                        <ul class="nav flex-column">
-                            <li class="nav-item mb-2">
-                                <text class="p-0 text-muted">Landline:
-                                    <text class="text-black">+632 8353-2180</text>
-                                </text>
-                            </li>
-                            <li class="nav-item mb-2">
-                                <text class="p-0 text-muted">Cellphone:
-                                    <text class="text-black">+639260121376</text>
-                                </text>
-                            </li>
-                            <li class="nav-item mb-2">
-                                <text class="p-0 text-muted">Email: <a href="mailto:topsinc.org@gmail.com"
-                                                                       class="text-black">topsinc.org@gmail.com</a>
-                                </text>
-                            </li>
-                            <li class="nav-item mb-2">
-                                <text class="p-0 text-muted">Email: <a href="mailto:tops.schoolhead.edu@gmail.com"
-                                                                       class="text-black">tops.schoolhead.edu@gmail.com</a>
-                                </text>
-                            </li>
-                            <li class="nav-item mb-2">
-                                <text class="p-0 text-muted">Address:
-                                    <text class="text-black">2589 Sta. Clara St. cor Leiva & Syquia Sts. Sta. Ana,
-                                        Manila,
-                                        1009
-                                    </text>
-                                </text>
-                            </li>
-                        </ul>
-                    </div>
-
-                </div>
-
-                <div class="d-flex justify-content-between py-4 my-4 border-top">
-                    <p>&copy; 2025, <a class="text-black"
-                                       href="https://github.com/unawarespecs/its122l-project-tops/blob/main/group_members.md">ITS122L
-                            Group 4 -
-                            BM3</a> and
-                        <a class="text-black" href="https://web.facebook.com/OfficialTOPs">Tahanan Outreach
-                            Projects &
-                            Services, Inc</a>. This group does not own the TOPS brand.
-                    </p>
-                    <ul class="list-unstyled d-flex">
-                        <li class="ms-3"><a class="link-dark" href="https://web.facebook.com/OfficialTOPs">
-                                <svg
-                                        class="bi" width="24" height="24">
-                                    <use xlink:href="#facebook"/>
-                                </svg>
-                            </a></li>
+    <!-- FOOTER -->
+    <div class="container">
+        <footer class="py-5">
+            <div class="row">
+                <div class="col-2">
+                    <h5>Sitemap</h5>
+                    <ul class="nav flex-column">
+                        <li class="nav-item mb-2"><a href="../pages/home.php"
+                                                     class="nav-link p-0 text-muted">Home</a>
+                        </li>
+                        <li class="nav-item mb-2"><a href="../pages/aboutus.php"
+                                                     class="nav-link p-0 text-muted">About Us</a></li>
+                        <li class="nav-item mb-2"><a href="../pages/announcements.php"
+                                                     class="nav-link p-0 text-muted">Announcements</a></li>
+                        <li class="nav-item mb-2"><a href="../pages/donate.php"
+                                                     class="nav-link p-0 text-muted">Donate</a></li>
+                        <li class="nav-item mb-2"><a href="../pages/schedule.php"
+                                                     class="nav-link p-0 text-muted">Schedule</a>
+                        </li>
+                        <li class="nav-item"><a href="../pages/admin_login/login.php"
+                                                class="nav-link p-0 text-muted">Admin
+                                Login</a>
+                        </li>
                     </ul>
                 </div>
-            </footer>
-        </div>
+                <div class="col-2"></div>
+                <div class="col-2">
+                    <h5>Contact Us</h5>
+                    <ul class="nav flex-column">
+                        <li class="nav-item mb-2">
+                            <text class="p-0 text-muted">Landline:
+                                <text class="text-black">+632 8353-2180</text>
+                            </text>
+                        </li>
+                        <li class="nav-item mb-2">
+                            <text class="p-0 text-muted">Cellphone:
+                                <text class="text-black">+639260121376</text>
+                            </text>
+                        </li>
+                        <li class="nav-item mb-2">
+                            <text class="p-0 text-muted">Email: <a href="mailto:topsinc.org@gmail.com"
+                                                                   class="text-black">topsinc.org@gmail.com</a>
+                            </text>
+                        </li>
+                        <li class="nav-item mb-2">
+                            <text class="p-0 text-muted">Email: <a href="mailto:tops.schoolhead.edu@gmail.com"
+                                                                   class="text-black">tops.schoolhead.edu@gmail.com</a>
+                            </text>
+                        </li>
+                        <li class="nav-item mb-2">
+                            <text class="p-0 text-muted">Address:
+                                <text class="text-black">2589 Sta. Clara St. cor Leiva & Syquia Sts. Sta. Ana,
+                                    Manila,
+                                    1009
+                                </text>
+                            </text>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="d-flex justify-content-between py-4 my-4 border-top">
+                <p>&copy; 2025, <a class="text-black"
+                                   href="https://github.com/unawarespecs/its122l-project-tops/blob/main/group_members.md">ITS122L
+                        Group 4 -
+                        BM3</a> and
+                    <a class="text-black" href="https://web.facebook.com/OfficialTOPs">Tahanan Outreach
+                        Projects &
+                        Services, Inc</a>. This group does not own the TOPS brand.
+                </p>
+                <ul class="list-unstyled d-flex">
+                    <li class="ms-3"><a class="link-dark" href="https://web.facebook.com/OfficialTOPs">
+                            <svg
+                                    class="bi" width="24" height="24">
+                                <use xlink:href="#facebook"/>
+                            </svg>
+                        </a></li>
+                </ul>
+            </div>
+        </footer>
+    </div>
 </main>
 </body>
 

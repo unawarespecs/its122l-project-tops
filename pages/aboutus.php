@@ -113,14 +113,14 @@
                 <h2>Our Goals</h2>
                 <ul>
                     <li><p>To design a holistic development program of a child's social, emotional, cognitive,
-                            and physical need that builds a solid and [???] foundation for lifelong learning and
+                            and physical need that builds a solid and broad foundation for lifelong learning and
                             well-being.</p></li>
-                    <li><p>To formulate a quality [???] based and age/capability based early childhood
+                    <li><p>To formulate a quality right based and age/capability based early childhood
                             education programs.</p></li>
                     <li><p>Establish and/or strengthen local and international partners that support and
-                            contribute [???] the safeguarding rights of children and other beneficiaries.</p></li>
+                            contribute to the safeguarding rights of children and other beneficiaries.</p></li>
                     <li><p>To develop necessary skills of parents and other beneficiaries to help augment
-                            their family's income through access to an alternative source of [???]</p></li>
+                            their family's income through access to an alternative source of livelihood</p></li>
                     <li><p>To collaborate with parents, school and the community in promoting health,
                             well-being, and learning of the children.</p></li>
                 </ul>

@@ -1,7 +1,9 @@
 <?php
 include "common_sessionid.php";
+include_once "../../config_announcements.php";
 global $isAuthorized;
 global $conn;
+global $conn_announcements;
 global $username;
 global $email;
 ?>
@@ -70,6 +72,84 @@ global $email;
                     <button id="logoutBtn" class="logout-btn" onclick="return confirmLogOutAdmin()">
                         <i class="fas fa-sign-out-alt"></i> Logout
                     </button>
+                </div>
+            </div>
+            <!-- Add Modal HTML -->
+            <div id="addAnnounceModal" tabindex="-1" aria-hidden="true" class="modal fade">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <form id="user_form" method="POST" action="announcement_backend.php">
+                            <div class="modal-header">
+                                <h4 class="modal-title">Post New Announcement</h4>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="form-group mb-3">
+                                    <label for="title" class="form-label">Title</label>
+                                    <input type="text" id="title" name="title" class="form-control" required>
+                                </div>
+                                <div class="form-group mb-3">
+                                    <label for="content" class="form-label">Announcement Text</label>
+                                    <textarea id="content" name="announcement_content" class="form-control" required></textarea>
+                                </div>
+                                <div class="form-group mb-3">
+                                    <label for="author" class="form-label">Author</label>
+                                    <input type="text" id="author" name="author" class="form-control" required>
+                                </div>
+                                <div class="form-group mb-3">
+                                    <label for="category" class="form-label">Category</label>
+                                    <input type="text" id="category" name="category" class="form-control" required>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <input type="button" class="btn btn-secondary" data-bs-dismiss="modal" value="Cancel">
+                                <button type="submit" class="btn btn-success" name="submit" id="addAnnouncement">Post Announcement</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="users-container">
+                <h3>List of Announcements</h3>
+                <button data-bs-toggle="modal" class="btn btn-success" data-bs-target="#addAnnounceModal"><i
+                            class="fas fa-plus"></i> Add Announcement
+                </button>
+                <br/>
+                <br/>
+                <div class="user-table-container">
+                    <table>
+                        <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Title</th>
+                            <th>Content</th>
+                            <th>Date</th>
+                            <th>Author</th>
+                            <th>Category</th>
+                        </tr>
+                        </thead>
+                        <tbody id="userTableBody">
+                        <?php
+                        $result = mysqli_query($conn_announcements, "SELECT * FROM announcements ORDER BY id DESC");
+                        $i = 1;
+                        while ($row = mysqli_fetch_array($result)) {
+                            ?>
+                            <tr>
+                                <td><?php echo $row["id"]; ?></td>
+                                <td><?php echo $row["title"]; ?></td>
+                                <td><?php echo $row["content"]; ?></td>
+                                <td><?php echo $row["publication_date"]; ?></td>
+                                <td><?php echo $row["author"]; ?></td>
+                                <td><?php echo $row["category"]; ?></td>
+                            </tr>
+                            <?php
+                            $i++;
+                        }
+                        ?>
+                        </tbody>
+                    </table>
                 </div>
             </div>
 

@@ -125,9 +125,7 @@
                             <select id="donatorPaymentMethod" class="form-select" required>
                                 <option selected disabled hidden>Select...</option>
                                 <option value="GCash">GCash</option>
-                                <option value="PayMaya">Maya</option>
-                                <option value="Credit_Debit">Credit/Debit Card</option>
-                                <option value="Paypal">PayPal</option>
+                                <option value="Online_Bank">Online Banking</option>
                             </select>
                         </div>
                     </div>
@@ -142,18 +140,21 @@
 
     <div class="container py-5">
         <h1>How to Donate</h1>
-        <p>[instruction on how to donate including payment method]</p>
+        <p style="color:red;">Due to time constraints and difficulty in implementing payment APIs, the donation form
+            WILL say that the donation platform is not ready yet.</p>
         <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#donateModal">Donate Now
         </button>
         <br/><br/>
+        <p>Account details:</p>
+        <br/><br/>
         <h1>How Your Donation Helps</h1>
         <p>By donating to Tahanan Outreach Projects & Services, Inc., you are giving marginalized children the precious
-            opportunity to receive education and break free from the cycle of poverty. Your contributions go towards
+            opportunity to receive education and to have enjoyment for said children. Your contributions go towards
             providing vital resources such as learning materials, school supplies, and community-based educational
             programs. Together, we can create a brighter future for these children and empower them to achieve their
-            dreams. (Please rewrite this) (Also explain where donation would be spent or how it will benefit the
-            institution)</p>
-        <p>Your donation will be spent on [placeholder]</p>
+            dreams.</p>
+        <p>Your donation will be spent on providing smiles for these children and making it faster to achieve our
+            mission.</p>
 
         <!-- FOOTER -->
         <div class="container">

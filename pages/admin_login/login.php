@@ -48,7 +48,7 @@
                     <button class="hidden" id="login">Have an account? Sign In</button>
                 </div>
                 <div class="toggle-panel toggle-right">
-                    <h1>Welcome Back!</h1>
+                    <h1>Welcome Back to the TOPS Admin Dashboard!</h1>
                     <p>Sign in with your admin credentials.</p>
                     <button class="hidden" id="register">No account? Sign Up</button>
                 </div>
