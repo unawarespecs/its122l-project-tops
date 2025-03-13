@@ -23,6 +23,7 @@ global $email;
     <link href="../../css/dashboard.css" rel="stylesheet">
     <link href="../../css/dashboard_responsive.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css"/>
 </head>
 
 <body>
@@ -108,54 +109,39 @@ global $email;
                 <button data-bs-toggle="modal" class="btn btn-success" data-bs-target="#addAdminModal"><i
                             class="fas fa-plus"></i> Add New User
                 </button>
-                <button onclick="void(0);" class="btn btn-danger" id="delete_multiple"><i class="fas fa-trash-can"></i>
-                    Delete Selected Users
-                </button>
                 <br/>
                 <br/>
                 <div class="user-table-container">
-                    <table>
+                    <table id="users_table">
                         <thead>
                         <tr>
-                            <th>
-							<span class="custom-checkbox">
-								<input type="checkbox" id="selectAll">
-								<label for="selectAll"></label>
-							</span>
-                            </th>
                             <th>ID</th>
-                            <th>Name</th>
+                            <th>Username</th>
                             <th>Email</th>
                             <th>Actions</th>
                         </tr>
                         </thead>
                         <tbody id="userTableBody">
                         <?php
-                        $result = mysqli_query($conn, "SELECT * FROM users ORDER BY id");
-                        $i = 1;
-                        while ($row = mysqli_fetch_array($result)) {
-                            ?>
-                            <tr id="<?php echo $row["id"]; ?>">
-                                <td>
-							<span class="custom-checkbox">
-								<input type="checkbox" class="user_checkbox" id="checkbox2" data-user-id="<?php echo $row["id"]; ?>">
-								<label for="checkbox2"></label>
-							</span>
-                                </td>
-                                <td><?php echo $i; ?></td>
-                                <td><?php echo $row["username"]; ?></td>
-                                <td><?php echo $row["email"]; ?></td>
-                                <td>
-                                    <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                                            data-bs-target="#editAdminModal">Edit
-                                    </button>
-                                    <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                                            data-bs-target="#deleteAdminModal">Delete
-                                    </button>
-                                </td>
-                            </tr>
-                            <?php
-                            $i++;
+                        $query = "SELECT * FROM users ORDER BY id";
+                        $query_run = mysqli_query($conn, $query);
+
+                        if(mysqli_num_rows($query_run) > 0)
+                        {
+                            foreach($query_run as $user)
+                            {
+                                ?>
+                                <tr>
+                                    <td><?= $user['id'] ?></td>
+                                    <td><?= $user['username'] ?></td>
+                                    <td><?= $user['email'] ?></td>
+                                    <td>
+                                        <button type="button" value="<?=$user['id'];?>" class="editUserBtn btn btn-success btn-sm">Edit</button>
+                                        <button type="button" value="<?=$user['id'];?>" class="deleteUserBtn btn btn-danger btn-sm">Delete</button>
+                                    </td>
+                                </tr>
+                                <?php
+                            }
                         }
                         ?>
                         </tbody>
@@ -199,51 +185,27 @@ global $email;
             <div id="editAdminModal" class="modal fade" tabindex="-1" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered">
                     <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title">Edit User</h4>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                        </div>
                         <form id="update_form">
-                            <div class="modal-header">
-                                <h4 class="modal-title">Edit User</h4>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                        aria-label="Close"></button>
-                            </div>
                             <div class="modal-body">
-                                <input type="hidden" id="id_edit" name="id" class="form-control" required>
-                                <div class="form-group mb-3">
-                                    <label for="username_edit" class="form-label">Username</label>
-                                    <input type="text" id="username_edit" name="username" class="form-control" required>
+                                <div id="errorMessageUpdate" class="alert alert-warning d-none"></div>
+                                <input type="hidden" name="user_id" id="user_id" >
+                                <div class="mb-3">
+                                    <label for="">User Name</label>
+                                    <input type="text" name="name" id="name" class="form-control" />
                                 </div>
-                                <div class="form-group mb-3">
-                                    <label for="email_edit" class="form-label">Email</label>
-                                    <input type="email" id="email_edit" name="email" class="form-control" required>
+                                <div class="mb-3">
+                                    <label for="">Email</label>
+                                    <input type="text" name="email" id="email" class="form-control" />
                                 </div>
                             </div>
                             <div class="modal-footer">
-                                <input type="hidden" value="2" name="type">
-                                <input type="button" class="btn btn-secondary" data-bs-dismiss="modal" value="Cancel">
-                                <button type="button" class="btn btn-primary" id="updateUser">Update</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-            <!-- Delete Modal HTML -->
-            <div id="deleteAdminModal" class="modal fade">
-                <div class="modal-dialog modal-dialog-centered">
-                    <div class="modal-content">
-                        <form>
-
-                            <div class="modal-header">
-                                <h4 class="modal-title">Delete User</h4>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                        aria-label="Close"></button>
-                            </div>
-                            <div class="modal-body">
-                                <input type="hidden" id="id_d" name="id" class="form-control">
-                                <p>Are you sure you want to delete this user?</p>
-                                <h5 class="text-warning"><small>This action cannot be undone.</small></h5>
-                            </div>
-                            <div class="modal-footer">
-                                <input type="button" class="btn btn-secondary" data-bs-dismiss="modal" value="Cancel">
-                                <button type="button" class="btn btn-primary" id="deleteUser">Delete</button>
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="submit" class="btn btn-primary">Update</button>
                             </div>
                         </form>
                     </div>
@@ -251,24 +213,11 @@ global $email;
             </div>
         </div>
     </div>
-
-<!--    <script>-->
-<!--        document.getElementById('delete_multiple').addEventListener('click', function () {-->
-<!--            alert('Not implemented');-->
-<!--        });-->
-<!---->
-<!--        document.getElementById('updateUser').addEventListener('click', function () {-->
-<!--            alert('Not implemented');-->
-<!--        });-->
-<!---->
-<!--        document.getElementById('deleteUser').addEventListener('click', function () {-->
-<!--            alert('Not implemented');-->
-<!--        });-->
-<!--    </script>-->
 <?php endif; ?>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="../../js/ajax.js"></script>
 <script src="../../js/scripts.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
         integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
         crossorigin="anonymous"></script>

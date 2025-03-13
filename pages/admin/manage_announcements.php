@@ -25,6 +25,7 @@ global $email;
     <link href="../../css/dashboard.css" rel="stylesheet">
     <link href="../../css/dashboard_responsive.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css"/>
 </head>
 
 <body>
@@ -110,6 +111,44 @@ global $email;
                     </div>
                 </div>
             </div>
+            <!-- Edit Modal HTML -->
+            <div id="editAnnounceModal" tabindex="-1" aria-hidden="true" class="modal fade">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <form id="editAnnouncement">
+                            <div class="modal-header">
+                                <h4 class="modal-title">Edit Announcement</h4>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div id="errorMessageUpdate" class="alert alert-warning d-none"></div>
+                                <input type="hidden" name="announcement_id" id="announcement_id" >
+                                <div class="form-group mb-3">
+                                    <label for="title" class="form-label">Title</label>
+                                    <input type="text" id="title" name="title" class="form-control" required>
+                                </div>
+                                <div class="form-group mb-3">
+                                    <label for="announcement_content" class="form-label">Announcement Text</label>
+                                    <textarea id="announcement_content" name="announcement_content" class="form-control" required></textarea>
+                                </div>
+                                <div class="form-group mb-3">
+                                    <label for="author" class="form-label">Author</label>
+                                    <input type="text" id="author" name="author" class="form-control" required>
+                                </div>
+                                <div class="form-group mb-3">
+                                    <label for="category" class="form-label">Category</label>
+                                    <input type="text" id="category" name="category" class="form-control" required>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <input type="button" class="btn btn-secondary" data-bs-dismiss="modal" value="Cancel">
+                                <button type="submit" class="btn btn-success" name="submit" id="updateAnnouncement">Edit</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
 
             <div class="users-container">
                 <h3>List of Announcements</h3>
@@ -119,7 +158,7 @@ global $email;
                 <br/>
                 <br/>
                 <div class="user-table-container">
-                    <table>
+                    <table id="announcements_table">
                         <thead>
                         <tr>
                             <th>ID</th>
@@ -128,6 +167,7 @@ global $email;
                             <th>Date</th>
                             <th>Author</th>
                             <th>Category</th>
+                            <th>Actions</th>
                         </tr>
                         </thead>
                         <tbody id="userTableBody">
@@ -143,6 +183,10 @@ global $email;
                                 <td><?php echo $row["publication_date"]; ?></td>
                                 <td><?php echo $row["author"]; ?></td>
                                 <td><?php echo $row["category"]; ?></td>
+                                <td>
+                                    <button type="button" value="<?=$row['id'];?>" class="editAnnouncementBtn btn btn-success btn-sm">Edit</button>
+                                    <button type="button" value="<?=$row['id'];?>" class="deleteAnnouncementBtn btn btn-danger btn-sm">Delete</button>
+                                </td>
                             </tr>
                             <?php
                             $i++;
@@ -165,6 +209,9 @@ global $email;
     </div>
 
 <?php endif; ?>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
+<script src="../../js/ajax_announcements.js"></script>
 <script src="../../js/scripts.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
         integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"

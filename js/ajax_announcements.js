@@ -1,35 +1,37 @@
-$(document).on('click', '.editUserBtn', function () {
+$(document).on('click', '.editAnnouncementBtn', function () {
 
-    var user_id = $(this).val();
+    var id = $(this).val();
 
     $.ajax({
         type: "GET",
-        url: "code.php?user_id=" + user_id,
+        url: "code_ann.php?announcement_id=" + id,
         success: function (response) {
             var res = jQuery.parseJSON(response);
             if (res.status == 404) {
                 alert(res.message);
             } else if (res.status == 200) {
-                $('#user_id').val(res.data.id);
-                $('#name').val(res.data.name);
-                $('#email').val(res.data.email);
+                $('#announcement_id').val(res.data.id);
+                $('#title').val(res.data.title);
+                $('#announcement_content').val(res.data.announcement_content);
+                $('#author').val(res.data.author);
+                $('#category').val(res.data.category);
 
-                $('#editAdminModal').modal('show');
+                $('#editAnnounceModal').modal('show');
             }
 
         }
     });
 
 });
-$(document).on('submit', '#update_form', function (e) {
+$(document).on('submit', '#editAnnouncement', function (e) {
     e.preventDefault();
 
     var formData = new FormData(this);
-    formData.append("update_user", true);
+    formData.append("update_announcement", true);
 
     $.ajax({
         type: "POST",
-        url: "code.php",
+        url: "code_ann.php",
         data: formData,
         processData: false,
         contentType: false,
@@ -47,10 +49,10 @@ $(document).on('submit', '#update_form', function (e) {
                 alertify.set('notifier', 'position', 'top-right');
                 alertify.success(res.message);
 
-                $('#editAdminModal').modal('hide');
-                $('#update_form')[0].reset();
+                $('#editAnnounceModal').modal('hide');
+                $('#editAnnouncement')[0].reset();
 
-                $('#users_table').load(location.href + " #users_table");
+                $('#announcements_table').load(location.href + " #announcements_table");
 
             } else if (res.status == 500) {
                 alert(res.message);
@@ -59,17 +61,17 @@ $(document).on('submit', '#update_form', function (e) {
     });
 
 });
-$(document).on('click', '.deleteUserBtn', function (e) {
+$(document).on('click', '.deleteAnnouncementBtn', function (e) {
     e.preventDefault();
 
-    if (confirm('Are you sure you want to delete this user?')) {
-        var user_id = $(this).val();
+    if (confirm('Are you sure you want to delete this announcement?')) {
+        var announcement_id = $(this).val();
         $.ajax({
             type: "POST",
-            url: "code.php",
+            url: "code_ann.php",
             data: {
-                'delete_user': true,
-                'user_id': user_id
+                'delete_announcement': true,
+                'announcement_id': announcement_id
             },
             success: function (response) {
 
@@ -81,7 +83,7 @@ $(document).on('click', '.deleteUserBtn', function (e) {
                     alertify.set('notifier', 'position', 'top-right');
                     alertify.success(res.message);
 
-                    $('#users_table').load(location.href + " #users_table");
+                    $('#announcements_table').load(location.href + " #announcements_table");
                 }
             }
         });

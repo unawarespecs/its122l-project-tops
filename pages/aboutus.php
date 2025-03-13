@@ -101,15 +101,17 @@
             </div>
         </div>
     </div>
-    <div class="container py-5">
+    <div class="container-fluid px-5">
         <div class="row">
             <div class="col-lg-6">
                 <h2>Vision</h2>
                 <p>Build a future of well-molded society and educated youth, raise a community with strong volunteerism
                     and a symbol of hope in attaining its mission.</p>
+
                 <h2>Mission</h2>
                 <p>We work to develop, strengthen and empower our community by providing essential resources to
                     those in need.</p>
+
                 <h2>Our Goals</h2>
                 <ul>
                     <li><p>To design a holistic development program of a child's social, emotional, cognitive,
@@ -124,14 +126,41 @@
                     <li><p>To collaborate with parents, school and the community in promoting health,
                             well-being, and learning of the children.</p></li>
                 </ul>
-                <h2>Core Values</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut, similique recusandae facilis
-                    veritatis cum dolores, maiores impedit suscipit praesentium ipsam doloremque officia est ipsa
-                    accusantium ut consequuntur quasi unde voluptatum?</p>
-                <h2>Services and Programs</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto pariatur quaerat sed eligendi
-                    sequi at inventore, autem quas. Accusamus, non atque nulla voluptatibus sed quibusdam cupiditate
-                    iusto aut ipsam! Incidunt.</p>
+
+                <h2>Advocacy and Amplification</h2>
+                <p>We strongly advocate, promote and lobby for child protection policies, youth development, gender
+                    equality, women empowerment and total human rights-based programs, projects and services through the
+                    following;</p>
+                <ol>
+                    <li><p>Involve parents in the process of “learning & caring” in becoming staunch and
+                            effective advocates of children’s rights</p></li>
+                    <li><p>Provision of health related education / trainings for parents of children
+                            beneficiaries of the program</p></li>
+                    <li><p>Provision of assistances to families affected by natural and manmade
+                            disasters in the community</p></li>
+                    <li><p>Conduct of advocacy activities in line with children’s month celebration</p></li>
+                    <li><p>Link legal assistance to children / women in especially difficult circumstances</p></li>
+                    <li><p>Forge positive partnerships with various institutions that could help in the
+                            accomplishment of goals and objectives as well as on the advocacies of the
+                            organization</p></li>
+                </ol>
+
+                <h2>Programs</h2>
+                <ul>
+                    <li><p><b>Liwanag ng Tahanan</b>: A scholarship program for daycare children, focusing on play-based
+                            early
+                            childhood education.<br><br>
+                            Headstart: 3.0 - 3.11 years old<br>
+                            Pre-Kindergarten: 4.0 - 4.11 years old</p>
+                    </li>
+
+                    <li><p><b>Livelihood Programs</b>: Skills training in dressmaking, handicrafts, soap-making, and
+                            computer
+                            training. The BEEHIVE program provides financial assistance and capacity-building for
+                            alternative livelihoods.</p>
+                    </li>
+                </ul>
+
             </div>
             <div class="col-lg-6">
                 <h2>Employees</h2>

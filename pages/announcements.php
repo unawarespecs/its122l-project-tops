@@ -1,10 +1,8 @@
 <?php
-
-// Connect to the database
-$host = 'localhost';    // Replace with your host
-$dbname = 'announcements'; // Database name
-$username = 'root';     // Your database username
-$password = '';         // Your database password
+$host = 'localhost';
+$dbname = 'announcements';
+$username = 'root';
+$password = '';
 try {
     $pdo = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -168,7 +166,8 @@ $announcements = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                     Published
                                     on: <?= date('F j, Y, g:i A', strtotime($announcement['publication_date'])) ?>
                                     <?php if (!empty($announcement['author'])): ?>
-                                        <br>By: <?= htmlspecialchars($announcement['author']) ?>
+                                        <br>By <?= htmlspecialchars($announcement['author']) ?>
+                                        <br>Category: <?= htmlspecialchars($announcement['category']) ?>
                                     <?php endif; ?>
                                 </p>
                                 <p class="card-text"><?= nl2br(htmlspecialchars(substr($announcement['content'], 0, 150))) .

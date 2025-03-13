@@ -12,5 +12,6 @@
     <orderEntry type="library" name="@popperjs/core" level="application" />
     <orderEntry type="library" name="jquery-3.6.0" level="application" />
     <orderEntry type="library" name="masonry-layout" level="application" />
+    <orderEntry type="library" name="alertifyjs" level="application" />
   </component>
 </module>

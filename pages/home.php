@@ -122,8 +122,7 @@
                 <div class="container">
                     <div class="carousel-caption text-start">
                         <h1>Welcome!</h1>
-                        <p>[Placeholder paragraph 1]</p>
-                        <p><a class="btn btn-lg btn-primary" href="https://example.com">Example button</a></p>
+                        <p>TOPS staff and children group image</p>
                     </div>
                 </div>
             </div>
@@ -133,9 +132,8 @@
 
                 <div class="container">
                     <div class="carousel-caption">
-                        <h1>[Placeholder 2]</h1>
+                        <h1>Our Advocacy</h1>
                         <p>[Placeholder paragraph 2]</p>
-                        <p><a class="btn btn-lg btn-primary" href="https://example.com">Example button</a></p>
                     </div>
                 </div>
             </div>
@@ -145,9 +143,8 @@
 
                 <div class="container">
                     <div class="carousel-caption text-end">
-                        <h1>[Placeholder 3]</h1>
+                        <h1>Our Activities</h1>
                         <p>[Placeholder paragraph 3]</p>
-                        <p><a class="btn btn-lg btn-primary" href="https://example.com">Example button</a></p>
                     </div>
                 </div>
             </div>
@@ -175,15 +172,11 @@
 
         <div class="row featurette">
             <div class="col-md-7">
-                <h2 class="featurette-heading">Placeholder. <span class="text-muted">Heavily Work In
-                            Progress.</span>
+                <h2 class="featurette-heading">We support children's rights. <span class="text-muted">And we provide advocacy and education to them too!</span>
                 </h2>
-                <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam molestie sem ut
-                    nulla convallis tincidunt. Vivamus cursus mattis tellus, in lacinia felis ullamcorper id.
-                    Aliquam malesuada massa dapibus leo semper pretium. Etiam metus lectus, pharetra a fringilla in,
-                    mattis non arcu. Aliquam nec diam a elit placerat fermentum. Nunc luctus a tortor non congue.
-                    Morbi posuere fringilla magna vestibulum euismod. Quisque in turpis eros. Vestibulum massa elit,
-                    venenatis quis ipsum in, efficitur tincidunt nisi.</p>
+                <p class="lead">We strongly advocate, promote and lobby for child protection policies, youth
+                    development, gender equality, women empowerment and total human rights-based programs, projects and
+                    services.</p>
             </div>
             <div class="col-md-5">
                 <img src="../assets/images/topsoffice2.jpg" alt="Heritage"
@@ -199,14 +192,18 @@
 
         <div class="row featurette">
             <div class="col-md-7 order-md-2">
-                <h2 class="featurette-heading">We're not done yet. <span class="text-muted">Come Help Us!</span>
+                <h2 class="featurette-heading">We create opportunities for children. <span class="text-muted">And livelihood opportunities for parents!</span>
                 </h2>
-                <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam molestie sem ut
-                    nulla convallis tincidunt. Vivamus cursus mattis tellus, in lacinia felis ullamcorper id.
-                    Aliquam malesuada massa dapibus leo semper pretium. Etiam metus lectus, pharetra a fringilla in,
-                    mattis non arcu. Aliquam nec diam a elit placerat fermentum. Nunc luctus a tortor non congue.
-                    Morbi posuere fringilla magna vestibulum euismod. Quisque in turpis eros. Vestibulum massa elit,
-                    venenatis quis ipsum in, efficitur tincidunt nisi.</p>
+                <p class="lead">We established a partnership with TESDA, other government agencies, NGOs, and even De La
+                    Salle University's Center for Social Concern and Action, our long time partner.<br><br> DLSU's
+                    Center for
+                    Social Concern and Action provides us with their community engagement
+                    and social development activities through partnership development, strategic
+                    leadership, training opportunities and other technical assistance in our holistic
+                    and integrated developmental programs, projects and services.<br><br>
+                    Our BEEHIVE Economic/Livelihood Program provides skills development training for parents and youth
+                    as an alternative source of income, and we provide material support for alternative source of
+                    livelihoods.</p>
             </div>
             <div class="col-md-5 order-md-1">
                 <img src="../assets/images/tops_activity_classroom.png" alt="Partners"
@@ -222,14 +219,16 @@
 
         <div class="row featurette">
             <div class="col-md-7">
-                <h2 class="featurette-heading">This site's not finalized. <span class="text-muted">But please help
+                <h2 class="featurette-heading">We dedicate ourselves to enriching children's lives. <span class="text-muted">And our mission is to help
                             those kids in need!</span></h2>
-                <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam molestie sem ut
-                    nulla convallis tincidunt. Vivamus cursus mattis tellus, in lacinia felis ullamcorper id.
-                    Aliquam malesuada massa dapibus leo semper pretium. Etiam metus lectus, pharetra a fringilla in,
-                    mattis non arcu. Aliquam nec diam a elit placerat fermentum. Nunc luctus a tortor non congue.
-                    Morbi posuere fringilla magna vestibulum euismod. Quisque in turpis eros. Vestibulum massa elit,
-                    venenatis quis ipsum in, efficitur tincidunt nisi.</p>
+                <p class="lead">Our “Tahanan” has withstood the test of time as a safe home, a beacon
+                    of hope, and a torch of light for our underserved, marginalized, and deprived
+                    beneficiaries, families, and communities. Guided by our vision to build a future
+                    that embodies a well-molded society, educated youth, and a community where
+                    strong volunteerism thrives as a symbol of hope, our president and board of
+                    trustees have renewed, sustained, and enhanced our organization alongside our
+                    dedicated, long-serving human resources, partner agencies, advocacy networks,
+                    and numerous private and public civic organizations.</p>
             </div>
             <div class="col-md-5">
                 <img src="../assets/images/tops_activity_livelihood.png" alt="WeBelieve"
