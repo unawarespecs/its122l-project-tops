@@ -38,8 +38,9 @@ if (isset($_POST['update_user'])) {
     $user_id = mysqli_real_escape_string($con, $_POST['user_id']);
     $name = mysqli_real_escape_string($con, $_POST['name']);
     $email = mysqli_real_escape_string($con, $_POST['email']);
+    $password_original = mysqli_real_escape_string($con, $_POST['password']);
 
-    if ($name == NULL || $email == NULL) {
+    if ($name == NULL || $email == NULL || $password_original == NULL) {
         $res = [
             'status' => 422,
             'message' => 'All fields are mandatory'
@@ -48,7 +49,9 @@ if (isset($_POST['update_user'])) {
         return;
     }
 
-    $query = "UPDATE users SET username='$name', email='$email'
+    $hashedPassword = password_hash($password_original, PASSWORD_BCRYPT);
+
+    $query = "UPDATE users SET username='$name', email='$email', password='$hashedPassword'
                 WHERE id='$user_id'";
     $query_run = mysqli_query($con, $query);
 

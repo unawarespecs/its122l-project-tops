@@ -13,6 +13,7 @@ $(document).on('click', '.editUserBtn', function () {
                 $('#user_id').val(res.data.id);
                 $('#name').val(res.data.name);
                 $('#email').val(res.data.email);
+                $('#password').val(res.data.password);
 
                 $('#editAdminModal').modal('show');
             }

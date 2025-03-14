@@ -197,9 +197,10 @@ $announcements = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                 <div class="modal-body">
                                     <p class="announcement-date">
                                         Published
-                                        on: <?= date('F j, Y, g:i a', strtotime($announcement['publication_date'])) ?>
+                                        on: <?= date('F j, Y, g:i A', strtotime($announcement['publication_date'])) ?>
                                         <?php if (!empty($announcement['author'])): ?>
-                                            <br>By: <?= htmlspecialchars($announcement['author']) ?>
+                                            <br>By <?= htmlspecialchars($announcement['author']) ?>
+                                            <br>Category: <?= htmlspecialchars($announcement['category']) ?>
                                         <?php endif; ?>
                                     </p>
                                     <p><?= nl2br(htmlspecialchars($announcement['content'])) ?></p>
