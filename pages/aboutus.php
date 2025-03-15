@@ -165,14 +165,19 @@
             <div class="col-lg-6">
                 <h2>Employees</h2>
                 <br/>
-                <h5>Employee Name</h5>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut, similique recusandae facilis
-                    veritatis cum dolores, maiores impedit suscipit praesentium ipsam doloremque officia est ipsa
-                    accusantium ut consequuntur quasi unde voluptatum?</p>
-                <h5>Employee Name</h5>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto pariatur quaerat sed eligendi
-                    sequi at inventore, autem quas. Accusamus, non atque nulla voluptatibus sed quibusdam cupiditate
-                    iusto aut ipsam! Incidunt.</p>
+                <h5>TOPS School Head</h5>
+                <p>Samantha Allyssa Bibiano</p>
+                <h5>Teachers</h5>
+                <ul>
+                    <li>Jerica Joice Navera</li>
+                    <li>Rona Laberon</li>
+                    <li>Menchie Monteras</li>
+                </ul>
+                <h5>Other Staff</h5>
+                <ul>
+                    <li>Marcelo Barrera, Security Officer</li>
+                    <li>Aracelie Saguyong, Utility Aid</li>
+                </ul>
             </div>
         </div>
 

@@ -133,7 +133,7 @@
                 <div class="container">
                     <div class="carousel-caption">
                         <h1>Our Advocacy</h1>
-                        <p>[Placeholder paragraph 2]</p>
+                        <p>We provide services to children and other people in need.</p>
                     </div>
                 </div>
             </div>
@@ -144,7 +144,7 @@
                 <div class="container">
                     <div class="carousel-caption text-end">
                         <h1>Our Activities</h1>
-                        <p>[Placeholder paragraph 3]</p>
+                        <p>Children participating in one of our activities.</p>
                     </div>
                 </div>
             </div>
